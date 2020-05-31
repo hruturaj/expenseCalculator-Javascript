@@ -1,0 +1,451 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.budget-container {
+    position: absolute;
+    width: 360px;
+    height: 747px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-46%);
+    background-color: #34006a;
+    border-radius: 10px 10px 0 0;
+}
+
+.budget-container .app-title {
+    margin-top: 30px;
+    margin-left: 28px;
+    color: #FFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.budget-header .balance {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.budget-header .balance .title {
+    color: #FFF;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.budget-header .balance .value {
+    color: #FFF;
+    font-size: 2em;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.budget-header .account {
+    display: block;
+    width: 310px;
+    margin: 35px auto 0;
+    line-height: 1.7rem;
+    text-align: center;
+}
+
+.budget-header .account .income,
+.chart,
+.outcome {
+    height: 50px;
+    display: inline-block;
+    width: 100px;
+    vertical-align: middle;
+}
+
+.budget-header .account .income .title {
+    color: #FFF;
+    opacity: 0.5;
+}
+
+.budget-header .account .income .income-total {
+    color: #FFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.budget-header .account .outcome .title {
+    color: #FFF;
+    opacity: 0.5;
+}
+
+.budget-header .account .outcome .outcome-total {
+    color: #f0624d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Dash Board */
+
+.budget-dashboard {
+    display: block;
+    width: 360px;
+    height: 470px;
+    background-color: #FFF;
+    margin-top: 35px;
+    border-radius: 30px 30px 5px 5px;
+}
+
+.budget-dashboard .dash-title {
+    display: inline-block;
+    color: #1a0034;
+    font-size: 1.7em;
+    margin-left: 20px;
+    margin-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.toggle {
+    display: block;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.toggle .tab1,
+.tab2,
+.tab3 {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #1a0034;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.4;
+}
+
+.toggle .tab2,
+.tab3 {
+    margin-left: 10px;
+}
+
+.active {
+    opacity: 1 !important;
+}
+
+.hide {
+    display: none;
+}
+
+.budget-dashboard input {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+.budget-dashboard #all {
+    width: 360px;
+    height: 339px;
+    position: relative;
+}
+
+.budget-dashboard #all ul {
+    width: 360px;
+    height: 285px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.budget-dashboard #all ul.list li {
+    position: relative;
+    font-size: 1em;
+    text-transform: capitalize;
+    text-align: justify;
+}
+
+.budget-dashboard #all ul.list li * {
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #all ul.list li .entry {
+    width: 250px;
+    height: auto;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.budget-dashboard #all ul.list li #edit {
+    visibility: hidden;
+    vertical-align: middle;
+}
+
+.budget-dashboard #all ul.list li #delete {
+    position: absolute;
+    height: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.budget-dashboard #all ul.list li #delete::after {
+    font-family: 'FontAwesome';
+    content: "\f1f8";
+    font-size: 20px;
+}
+
+.budget-dashboard #all ul.list li.expense {
+    color: #f0624d;
+}
+
+.budget-dashboard #all ul.list li.income {
+    color: #382b7cda;
+}
+
+
+/* Expense */
+
+.budget-dashboard #expense {
+    width: 360px;
+    height: 339px;
+    position: relative;
+}
+
+.budget-dashboard #expense .input {
+    position: absolute;
+    display: block;
+    width: 360px;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+}
+
+.budget-dashboard #expense .input * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.budget-dashboard #expense .input input#expense-title-input {
+    height: 40px;
+    width: 150px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+}
+
+.budget-dashboard #expense .input input#expense-amount-input {
+    height: 40px;
+    width: 110px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    margin-left: -10px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+
+.budget-dashboard #expense .input i.fa-plus {
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
+    vertical-align: middle;
+    right: -10px;
+    background-color: tomato;
+    padding: 3px;
+    margin: auto;
+    border-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: rgb(120, 222, 240);
+}
+
+.budget-dashboard #expense ul {
+    width: 360px;
+    height: 290px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.budget-dashboard #expense ul.list li {
+    position: relative;
+    font-size: 1em;
+}
+
+.budget-dashboard #expense ul.list li * {
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #expense ul.list li .entry {
+    width: 250px;
+    height: auto;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0624d;
+    text-transform: capitalize;
+}
+
+.budget-dashboard #expense ul.list li #edit {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 50px;
+    cursor: pointer;
+}
+
+.budget-dashboard #expense ul.list li #edit::before {
+    font-family: 'FontAwesome';
+    content: "\f044";
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #expense ul.list li #delete {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.budget-dashboard #expense ul.list li #delete::before {
+    font-family: 'FontAwesome';
+    content: "\f1f8";
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+/* Income */
+
+.budget-dashboard #income {
+    width: 360px;
+    height: 340px;
+    position: relative;
+}
+
+.budget-dashboard #income .input {
+    position: absolute;
+    display: block;
+    width: 360px;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+}
+
+.budget-dashboard #income .input input#income-title-input {
+    height: 40px;
+    width: 150px;
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+}
+
+.budget-dashboard #income .input input#income-amount-input {
+    height: 40px;
+    width: 110px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    margin-left: -10px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+
+.budget-dashboard #income .input i.fa-plus {
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
+    vertical-align: middle;
+    right: -10px;
+    background-color: tomato;
+    padding: 3px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: rgb(120, 222, 240);
+}
+
+.budget-dashboard #income ul {
+    width: 360px;
+    height: 290px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.budget-dashboard #income ul.list li {
+    position: relative;
+    font-size: 1em;
+}
+
+.budget-dashboard #income ul.list li * {
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #income ul.list li .entry {
+    width: 250px;
+    height: auto;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #382b7cda;
+    text-transform: capitalize;
+}
+
+.budget-dashboard #income ul.list li #edit {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 50px;
+    cursor: pointer;
+}
+
+.budget-dashboard #income ul.list li #edit::before {
+    font-family: 'FontAwesome';
+    content: "\f044";
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #income ul.list li #delete {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.budget-dashboard #income ul.list li #delete::before {
+    font-family: 'FontAwesome';
+    content: "\f1f8";
+    font-size: 20px;
+    vertical-align: middle;
+}
